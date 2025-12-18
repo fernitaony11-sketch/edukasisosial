@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoClass AI - Klasifikasi Lingkungan Berbasis AI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="logo">
+                <i class="fas fa-leaf"></i> EcoClass AI
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#upload">Klasifikasi</a></li>
+                <li><a href="#education">Edukasi</a></li>
+            </ul>
+            <div class="user-info" id="userInfo" style="display: none;">
+                <span id="welcomeUser"></span>
+                <div class="user-avatar" id="logoutBtn" title="Logout">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="login-btn-nav" id="loginBtn" style="display: none;">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="login-card">
+            <h2><i class="fas fa-lock"></i> EcoClass AI</h2>
+            <p class="login-subtitle">Klasifikasi lingkungan berbasis AI untuk kesadaran sosial</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Masuk ke Dashboard
+                </button>
+            </form>
+            <p class="demo-info">
+                Demo: admin / admin123
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="main-container" id="mainPage">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Klasifikasi Lingkungan <span class="highlight">Berbasis AI</span></h1>
+                <p>Deteksi sampah, polusi, dan kerusakan lingkungan secara real-time dengan kecerdasan buatan. Kontribusi untuk edukasi sosial dan pelestarian bumi.</p>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalScans">0</div>
+                        <div>Gambar Diproses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number safe" id="safeCount">0</div>
+                        <div>Hasil Aman</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number warning" id="warningCount">0</div>
+                        <div>Perlu Perhatian</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="upload-section" id="upload">
+            <div class="section-header">
+                <h2><i class="fas fa-camera"></i> Unggah Gambar Lingkungan</h2>
+                <p>Drag & drop atau klik untuk mengunggah foto sampah, polusi, atau kondisi lingkungan</p>
+            </div>
+
+            <div class="upload-grid">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Klik atau seret gambar ke sini</h3>
+                    <p>Format: JPG, PNG, WEBP (max 5MB)</p>
+                    <input type="file" id="imageInput" accept="image/*" class="file-input">
+                    <img id="preview" class="preview-img">
+                    <button class="analyze-btn" id="analyzeBtn">
+                        <i class="fas fa-magic"></i> Analisis dengan AI
+                    </button>
+                </div>
+
+                <div class="results" id="results">
+                    <h3><i class="fas fa-chart-line"></i> Hasil Klasifikasi AI</h3>
+                    <div id="resultList"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section" id="education">
+            <div class="section-header">
+                <h2><i class="fas fa-graduation-cap"></i> Edukasi Sosial Lingkungan</h2>
+                <p>Pelajari dampak lingkungan dan cara berkontribusi positif untuk bumi kita</p>
+            </div>
+
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-icon danger">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3>Sampah Plastik</h3>
+                    <p>Butuh 450 tahun terurai. Setiap menit ada 1 truk sampah plastik masuk laut. Mulai kurangi plastik sekali pakai!</p>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-icon warning">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Polusi Udara</h3>
+                    <p>7 juta kematian per tahun akibat polusi udara. Tanam pohon dan gunakan transportasi ramah lingkungan.</p>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-icon safe">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Deforestasi</h3>
+                    <p>18,7 juta hektar hutan hilang setiap tahun. Satu pohon menyerap 22kg CO2/tahun. Yuk tanam pohon!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
